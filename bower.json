@@ -1,0 +1,26 @@
+''{
+  "name": "angular-mall",
+  "version": "0.0.0",
+  "description": "angular try at Mall",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "ifca"
+  ],
+  "authors": [
+    "geoyws"
+  ],
+  "license": "MIT",
+  "homepage": "ifca.com.my",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
