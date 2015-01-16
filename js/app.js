@@ -3,10 +3,11 @@
 /* App Module */
 
 var mallApp = angular.module('mallApp', [
-    'mallAppAnimations',
-    'mallAppControllers',
-    'mallAppFilters',
-    'mallAppServices'
+    'ngRoute',
+    //'mallAppAnimations',
+    'mallAppControllers'
+    //'mallAppFilters',
+    //'mallAppServices'
 ]);
 
 mallApp.config(
@@ -39,8 +40,8 @@ mallApp.config(
                     controller: 'whatsHappeningCtrl'
                 }).
                 when('/transactions', {
-                    templateUrl: 'partials/center-info.html',
-                    controller: 'centerInfoCtrl'
+                    templateUrl: 'partials/transactions.html',
+                    controller: 'transactionsCtrl'
                 }).
                 when('/center-info', {
                     templateUrl: 'partials/center-info.html',

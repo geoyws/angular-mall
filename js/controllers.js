@@ -4,19 +4,56 @@
 
 var mallAppControllers = angular.module('mallAppControllers', []);
 
-mallAppControllers.controller('homeCtrl', ['$scope', 'Phone',
-  function ($scope, Phone) {
-      $scope.phones = Phone.query();
-      $scope.orderProp = 'age';
-}]);
+mallAppControllers.controller('centerInfoCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
 
-mallAppControllers.controller('startCtrl', ['$scope', '$routeParams', 'Phone',
-  function ($scope, $routeParams, Phone) {
-      $scope.phone = Phone.get({ phoneId: $routeParams.phoneId }, function (phone) {
-          $scope.mainImageUrl = phone.images[0];
-      });
+mallAppControllers.controller('directoryCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
 
-      $scope.setImage = function (imageUrl) {
-          $scope.mainImageUrl = imageUrl;
-      }
-}]);
+mallAppControllers.controller('homeCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
+
+mallAppControllers.controller('loginCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
+
+mallAppControllers.controller('qrCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
+
+mallAppControllers.controller('selectDefaultCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
+
+mallAppControllers.controller('startCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
+
+mallAppControllers.controller('transactionsCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
+
+mallAppControllers.controller('whatsHappeningCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+]);
