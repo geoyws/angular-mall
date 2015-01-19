@@ -5,14 +5,14 @@
 var mallApp = angular.module('mallApp', [
     'ngRoute',
     //'mallAppAnimations',
-    'mallAppControllers'
+    'mallAppControllers',
     //'mallAppFilters',
-    //'mallAppServices'
+    'mallAppServices'
 ]);
 
 mallApp.config(
     [
-        '$routerProvider',
+        '$routeProvider',
         function ($routeProvider) {
             $routeProvider.
                 when('/home', {

@@ -2,57 +2,48 @@
 
 /* Controllers */
 
-var mallAppControllers = angular.module('mallAppControllers', []);
-
-mallAppControllers.controller('centerInfoCtrl', ['$scope',
+var mallAppControllers = angular.module('mallAppControllers', [])
+.controller('centerInfoCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('directoryCtrl', ['$scope',
+])
+.controller('directoryCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('homeCtrl', ['$scope',
+])
+.controller('homeCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('loginCtrl', ['$scope',
+])
+.controller('loginCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('qrCtrl', ['$scope',
+])
+.controller('qrCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('selectDefaultCtrl', ['$scope',
+])
+.controller('selectDefaultCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('startCtrl', ['$scope',
+])
+.controller('startCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('transactionsCtrl', ['$scope',
+])
+.controller('transactionsCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
-]);
-
-mallAppControllers.controller('whatsHappeningCtrl', ['$scope',
+])
+.controller('whatsHappeningCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
