@@ -14,45 +14,49 @@ mallApp.config(
     [
         '$routeProvider',
         function ($routeProvider) {
-            $routeProvider.
-                when('/home', {
+            $routeProvider
+		.when('/', {
+		  templateUrl: 'partials/splashscreen.html',
+		  controller: 'splashscreenCtrl'
+		})
+                .when('/home', {
                     templateUrl: 'partials/home.html',
                     controller: 'homeCtrl'
-                }).
-                when('/start', {
+                })
+                .when('/start', {
                     templateUrl: 'partials/start.html',
                     controller: 'startCtrl'
-                }).
-                when('/login', {
+                })
+                .when('/login', {
                     templateUrl: 'partials/login.html',
                     controller: 'loginCtrl'
-                }).
-                when('/select-default', {
+                })
+                .when('/select-default', {
                     templateUrl: 'partials/select-default.html',
                     controller: 'selectDefaultCtrl'
-                }).
-                when('/directory', {
+                })
+                .when('/directory', {
                     templateUrl: 'partials/directory.html',
                     controller: 'directoryCtrl'
-                }).
-                when('/whats-happening', {
+                })
+                .when('/whats-happening', {
                     templateUrl: 'partials/whats-happening.html',
                     controller: 'whatsHappeningCtrl'
-                }).
-                when('/transactions', {
+                })
+                .when('/transactions', {
                     templateUrl: 'partials/transactions.html',
                     controller: 'transactionsCtrl'
-                }).
-                when('/center-info', {
+                })
+                .when('/center-info', {
                     templateUrl: 'partials/center-info.html',
                     controller: 'centerInfoCtrl'
-                }).
-                when('/qr', {
+                })
+                .when('/qr', {
                     templateUrl: 'partials/qr.html',
                     controller: 'qrCtrl'
-                }).
-                otherwise({
-                    redirectTo: '/home'
+                })
+                .otherwise({
+                    redirectTo: '/splashscreen'
                 });
         }
     ]

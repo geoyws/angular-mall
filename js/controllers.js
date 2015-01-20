@@ -3,6 +3,11 @@
 /* Controllers */
 
 var mallAppControllers = angular.module('mallAppControllers', [])
+.controller('splashscreenCtrl', ['$scope',
+  function ($scope) {
+    $scope.whatever = 1;
+  }
+])
 .controller('loginCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
