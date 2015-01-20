@@ -3,12 +3,7 @@
 /* Controllers */
 
 var mallAppControllers = angular.module('mallAppControllers', [])
-.controller('centerInfoCtrl', ['$scope',
-  function ($scope) {
-      $scope.whatever = 1;
-  }
-])
-.controller('directoryCtrl', ['$scope',
+.controller('loginCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
@@ -18,7 +13,12 @@ var mallAppControllers = angular.module('mallAppControllers', [])
       $scope.whatever = 1;
   }
 ])
-.controller('loginCtrl', ['$scope',
+.controller('centerInfoCtrl', ['$scope',
+  function ($scope) {
+      $scope.whatever = 1;
+  }
+])
+.controller('directoryCtrl', ['$scope',
   function ($scope) {
       $scope.whatever = 1;
   }
