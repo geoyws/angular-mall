@@ -58,3 +58,4 @@ mallApp.config(
         }
     ]
 );
+
