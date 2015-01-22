@@ -1,0 +1,19 @@
+<login-page>
+  <section-holder absolute-center block>
+    <img h-center block src="img/paradigm-mall-logo.png">
+    <md-content>
+      <form name="loginForm">
+	<md-input-container>
+	  <label>Username</label>
+	  <input ng-model="user.username" required>
+	</md-input-container>
+	<md-input-container>
+	  <label>Password</label>
+	  <input ng-model="user.password" type="password" required>
+	</md-input-container>
+      </form>
+    </md-content>
+    <md-button class="md-raised md-primary" href="/login">Login</md-button>
+    <md-button class="md-raised md-primary" href="/home">Skip</md-button>
+  </section-holder>
+</login-page>

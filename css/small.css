@@ -1,0 +1,16 @@
+start-page section-holder,
+login-page section-holder {
+  width: 300px;
+  height: 300px;
+}
+
+start-page .md-button,
+login-page .md-button {
+  display: block;
+  width: 300px;
+  margin: 10px 0px;
+}
+
+start-page img {
+  margin: 0 auto 50px auto;
+}

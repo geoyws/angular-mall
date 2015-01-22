@@ -4,6 +4,7 @@
 
 var mallApp = angular.module('mallApp', [
     'ngRoute',
+    'ngMaterial',
     //'mallAppAnimations',
     'mallAppControllers',
     //'mallAppFilters',
@@ -19,10 +20,6 @@ mallApp.config(
 		  templateUrl: 'partials/splashscreen.html',
 		  controller: 'splashscreenCtrl'
 		})
-                .when('/home', {
-                    templateUrl: 'partials/home.html',
-                    controller: 'homeCtrl'
-                })
                 .when('/start', {
                     templateUrl: 'partials/start.html',
                     controller: 'startCtrl'
@@ -31,9 +28,9 @@ mallApp.config(
                     templateUrl: 'partials/login.html',
                     controller: 'loginCtrl'
                 })
-                .when('/select-default', {
-                    templateUrl: 'partials/select-default.html',
-                    controller: 'selectDefaultCtrl'
+                .when('/home', {
+                    templateUrl: 'partials/home.html',
+                    controller: 'homeCtrl'
                 })
                 .when('/directory', {
                     templateUrl: 'partials/directory.html',
