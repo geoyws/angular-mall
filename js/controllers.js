@@ -28,9 +28,22 @@ var mallAppControllers = angular.module('mallAppControllers', ['ngMaterial'])
       $scope.whatever = 1;
   }
 ])
-.controller('loginCtrl', ['$scope',
-  function ($scope) {
-      $scope.whatever = 1;
+.controller('loginCtrl', ['$scope', '$location', '$mdSidenav',
+  function ($scope, $location, $mdSidenav) {
+      $scope.login = function () {
+	// $resource to authenticate and also save userId and token for $resource usage
+	// then afterwards redirect to /start
+	$location.path('/start');	
+      };
+      $scope.signUp = function () {
+	// do something to sign up the user, using $resource or something
+      };
+      $scope.toggleLeftSidenav = function () {
+	$mdSidenav('left').toggle();
+      };
+      $scope.toggleRightSidenav = function () {
+	$mdSidenav('right').toggle();
+      };
   }
 ])
 .controller('homeCtrl', ['$scope',

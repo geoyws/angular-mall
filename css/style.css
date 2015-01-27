@@ -15,4 +15,7 @@
 [h-center] {
   margin: auto;
 }
-
+ 
+::-webkit-scrollbar { 
+    display: none; 
+}
