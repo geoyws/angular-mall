@@ -27,7 +27,15 @@
 }
 
 .std-padding {
-  padding: 20px;
+  padding: 15px;
+}
+
+.no-top-padding {
+  padding-top: 0;
+}
+
+.no-bottom-padding {
+  padding-bottom: 0;
 }
 
 .logo

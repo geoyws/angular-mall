@@ -1,13 +1,9 @@
-﻿<start-page>
-  <section-holder class="absolute-center block">
-    <img class="block" src="img/paradigm-mall-logo.png">
-    <md-button class="md-raised md-primary" href="#/login">Login</md-button>
-    <md-button class="md-raised md-primary" href="#/home">Skip</md-button>
-    <md-button class="md-raised md-primary" href="#/transactions">Transactions</md-button>
-    <md-button class="md-raised md-primary" href="#/whats-happening">What's Happening?</md-button>
-    <md-button class="md-raised md-primary" href="#/qr">qr</md-button>
-    <md-button class="md-raised md-primary" href="#/directory">Directory</md-button>
-    <md-button class="md-raised md-primary" href="#/center-info">Center Info</md-button>
-    <md-button class="md-raised md-primary" href="#/splashscreen">Splashscreen</md-button>
-  </section-holder>
-</start-page>
+﻿<directory-page>
+  <md-toolbar class="std-padding">Directory</md-toolbar>
+  <md-content class="std-padding no-top-padding no-bottom-padding">
+    <md-input-group>
+      <md-input type="text" placeholder="search" ng-model="directory.search" name="search"></md-input>
+    </md-input-group>
+  </md-content>
+  <iframe class="" width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBqmT8oouS5ECWkzLKwvGtqmydmkSqacSQ&origin=Petaling+Jaya&destination=Megamall&avoid=tolls|highways"></iframe>
+</directory-page>
