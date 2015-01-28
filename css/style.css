@@ -8,6 +8,12 @@
   overflow: auto;
 }
 
+[flex-centered] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 [block] {
   display: block;
 }

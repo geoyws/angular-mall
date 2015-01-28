@@ -3,19 +3,19 @@
 /* Controllers */
 
 var mallAppControllers = angular.module('mallAppControllers', ['ngMaterial'])
-.controller('splashscreenCtrl', ['$scope', '$location', '$timeout',
-  function ($scope, $location, $timeout) {
+.controller('splashscreenCtrl', ['$scope', '$window', '$location', '$timeout',
+  function ($scope, $window, $location, $timeout) {
     $scope.splashRedirect = $timeout(function () {
       //alert(JSON.stringify(localStorage.getItem('userId')));
       //alert(JSON.stringify(window.localStorage));
       // testing for localStorage functionality, if there's none, we alert a warning
-      if (window.localStorage) {
+      if ($window.localStorage) {
 	//alert(2);
-	if (localStorage.getItem('userId')) {
+	if ($window.localStorage.getItem('userId')) {
 	  //alert(1);
 	  $location.path('/home');
 	} else {
-	  $location.path('/start');
+	  $location.path('/login');
 	}
       } else {
 	alert('Your browser is outdated. This app cannot be run on your stack.');
@@ -44,11 +44,6 @@ var mallAppControllers = angular.module('mallAppControllers', ['ngMaterial'])
       $scope.toggleRightSidenav = function () {
 	$mdSidenav('right').toggle();
       };
-  }
-])
-.controller('homeCtrl', ['$scope',
-  function ($scope) {
-      $scope.whatever = 1;
   }
 ])
 .controller('centerInfoCtrl', ['$scope',

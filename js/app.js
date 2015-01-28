@@ -28,10 +28,6 @@ mallApp.config(
                     templateUrl: 'partials/login.html',
                     controller: 'loginCtrl'
                 })
-                .when('/home', {
-                    templateUrl: 'partials/home.html',
-                    controller: 'homeCtrl'
-                })
                 .when('/directory', {
                     templateUrl: 'partials/directory.html',
                     controller: 'directoryCtrl'

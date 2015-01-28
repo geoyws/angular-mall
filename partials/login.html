@@ -1,5 +1,4 @@
-﻿<p>Login</p>
-<login-page>
+﻿<login-page>
   <md-sidenav class="md-sidenav-left" md-component-id="left">
     <md-toolbar class="md-theme-indigo">
       <h1 class="md-toolbar-tools">Sign Up</h1>
@@ -49,16 +48,8 @@
   <section-holder absolute-center block>
     <img block src="img/paradigm-mall-logo.png" logo>
     <md-content>
-      <md-input-container>
-	<label>Username</label>
-	<input type="text" ng-model="login.username">
-      </md-input-container>
-      <md-input-container>
-	<label>Password</label>
-	<input type="password" ng-model="login.password">
-      </md-input-container>
-    </md-content>
-    <md-content>
+      <md-text-float class="" label="username" ng-model="login.username" name="username" required></md-text-float>
+      <md-text-float class="" label="password" ng-model="login.password" name="password" required></md-text-float>
       <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
       <md-button ng-click="toggleRightSidenav()" class="md-raised md-primary">Forgot Password</md-button>
       <md-button ng-click="toggleLeftSidenav()" class="md-raised md-primary">Sign Up</md-button>
