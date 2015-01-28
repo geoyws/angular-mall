@@ -1,4 +1,4 @@
-﻿[absolute-center] {
+﻿.absolute-center {
   margin: auto;
   position: absolute;
   top: 0;
@@ -8,20 +8,36 @@
   overflow: auto;
 }
 
-[flex-centered] {
+.flex-centered {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-[block] {
+.block {
   display: block;
 }
 
-[h-center] {
+.h-center {
   margin: auto;
 }
  
 ::-webkit-scrollbar { 
     display: none; 
 }
+
+.std-padding {
+  padding: 20px;
+}
+
+.logo
+{
+  margin: 15px auto 15px auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+}
+

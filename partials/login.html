@@ -3,53 +3,52 @@
     <md-toolbar class="md-theme-indigo">
       <h1 class="md-toolbar-tools">Sign Up</h1>
     </md-toolbar>
-    <md-content>
-      <form name="signUp" ng-submit="signUp()">
+    <form class="std-padding" ng-submit="signUp()">
+      <md-content>
 	<md-input-container>
-	  <label>Username</label>
-	  <input type="text" ng-model="signUp.username" required></input>
+	  <md-text-float type="text" class="" label="username" ng-model="signUp.username" name="username" required></md-text-float>
 	</md-input-container>
 	<md-input-container>
-	  <label>Password</label>
-	  <input type="password" ng-model="signUp.password" required></input>
+	  <md-text-float type="password" class="" label="password" ng-model="signUp.password" name="password" required></md-text-float>
 	</md-input-container>
 	<md-input-container>
-	  <label>Repeat Password</label>
-	  <input type="password" ng-model="signUp.repeatPassword" required></input>
+	  <md-text-float type="password" class="" label="repeat password" ng-model="signUp.repeatPassword" name="repeatPassword" required></md-text-float>
 	</md-input-container>
 	<md-input-container>
-	  <label>Email</label>
-	  <input type="email" ng-model="signUp.email" required></input>
+	  <md-text-float type="email" class="" label="email" ng-model="signUp.email" name="email" required></md-text-float>
 	</md-input-container>
-      </form>
-      <md-button class="md-raised md-primary">Login</md-button>
-      <md-button ng-click="sso.facebook()" class="md-raised md-primary">Sign Up with Facebook</md-button>
-      <md-button ng-click="sso.twitter()" class="md-raised md-primary">Sign Up with Twitter</md-button>
-      <md-button ng-click="sso.google()" class="md-raised md-primary">Sign Up with Google</md-button>
-    </md-content>
+      </md-content>
+      <md-content>
+	<md-button class="md-raised md-primary">Create Account</md-button>
+	<md-button ng-click="sso.facebook()" class="md-raised md-primary">Sign Up with Facebook</md-button>
+	<md-button ng-click="sso.twitter()" class="md-raised md-primary">Sign Up with Twitter</md-button>
+	<md-button ng-click="sso.google()" class="md-raised md-primary">Sign Up with Google</md-button>
+      </md-content>
+    </form>
   </md-sidenav>
   <md-sidenav class="md-sidenav-right" md-component-id="right">
     <md-toolbar class="md-theme-indigo">
       <h1 class="md-toolbar-tools">Forgot Password</h1>
     </md-toolbar>
-    <form ng-submit="forgotPasswordSubmission()">
+    <form class="std-padding" submit="forgotPasswordSubmission()">
       <md-content>
-	<md-input-container>
-	  <label>Email</label>
-	  <input type="email" ng-model="forgot.email" required></input>
-	  <forgot-password-description block>
-	    You will be sent an email with instructions for you to recover your password.
-	  </forgot-password-description>
-	  <md-button class="md-raised md-primary" href="#/login">Login</md-button>
-	</md-input-container>
+	  <md-input-container>
+	    <md-text-float type="email" class="" label="email" ng-model="forgot.email" name="email" required></md-text-float>
+	    <forgot-password-description class="block">
+	      You will be sent an email with instructions for you to recover your password.
+	    </forgot-password-description>
+	    <md-button class="md-raised md-primary" href="#/login">Login</md-button>
+	  </md-input-container>
       </md-content>
     </form>
   </md-sidenav>
   <section-holder class="absolute-center block">
-    <img block src="img/paradigm-mall-logo.png" logo>
+    <img class="block logo" src="img/paradigm-mall-logo.png">
     <md-content>
-      <md-text-float class="" label="username" ng-model="login.username" name="username" required></md-text-float>
-      <md-text-float class="" label="password" ng-model="login.password" name="password" required></md-text-float>
+      <md-text-float type="text" class="" label="username" ng-model="login.username" name="username" required></md-text-float>
+      <md-text-float type="password" class="" label="password" ng-model="login.password" name="password" required></md-text-float>
+    </md-content>
+    <md-content>
       <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
       <md-button ng-click="toggleRightSidenav()" class="md-raised md-primary">Forgot Password</md-button>
       <md-button ng-click="toggleLeftSidenav()" class="md-raised md-primary">Sign Up</md-button>
