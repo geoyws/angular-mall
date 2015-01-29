@@ -1,17 +1,8 @@
 ﻿<whats-happening-page>
   <md-toolbar class="std-padding">What's Happening?</md-toolbar>
   <md-content>
-    <md-card>
-      <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/New_Year_Scene.jpg/220px-New_Year_Scene.jpg" class="md-card-image">
-      <h2>Happy Chinese New Year!</h2>
-    </md-card>
-    <md-card>
-      <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/New_Year_Scene.jpg/220px-New_Year_Scene.jpg" class="md-card-image">
-      <h2>Happy Chinese New Year!</h2>
-    </md-card>
-    <md-card>
-      <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/New_Year_Scene.jpg/220px-New_Year_Scene.jpg" class="md-card-image">
-      <h2>Happy Chinese New Year!</h2>
+    <md-card ng-init="renderHappenings()" ng-repeat="happening in happenings">
+      {{happening.body}}
     </md-card>
   </md-content>
   <section-holder class="absolute-center block">

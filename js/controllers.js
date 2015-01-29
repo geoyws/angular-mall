@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var mallAppControllers = angular.module('mallAppControllers', ['ngMaterial'])
+var mallAppControllers = angular.module('mallAppControllers', [])
 .controller('splashscreenCtrl', ['$scope', '$window', '$location', '$timeout',
   function ($scope, $window, $location, $timeout) {
     $scope.splashRedirect = $timeout(function () {
@@ -43,49 +43,56 @@ var mallAppControllers = angular.module('mallAppControllers', ['ngMaterial'])
 ])
 .controller('loginCtrl', ['$scope', '$location', '$mdSidenav',
   function ($scope, $location, $mdSidenav) {
-      $scope.login = function () {
-	// $resource to authenticate and also save userId and token for $resource usage
-	// then afterwards redirect to /start
-	$location.path('/start');	
-      };
-      $scope.signUp = function () {
-	// do something to sign up the user, using $resource or something
-      };
-      $scope.toggleLeftSidenav = function () {
-	$mdSidenav('left').toggle();
-      };
-      $scope.toggleRightSidenav = function () {
-	$mdSidenav('right').toggle();
-      };
+    $scope.login = function () {
+      // $resource to authenticate and also save userId and token for $resource usage
+      // then afterwards redirect to /start
+      $location.path('/start');	
+    };
+    $scope.signUp = function () {
+      // do something to sign up the user, using $resource or something
+    };
+    $scope.toggleLeftSidenav = function () {
+      $mdSidenav('left').toggle();
+    };
+    $scope.toggleRightSidenav = function () {
+      $mdSidenav('right').toggle();
+    };
   }
 ])
 .controller('centerInfoCtrl', ['$scope',
   function ($scope) {
-      $scope.whatever = 1;
+    $scope.whatever = 1;
   }
 ])
 .controller('directoryCtrl', ['$scope',
   function ($scope) {
-      $scope.whatever = 1;
+    $scope.whatever = 1;
   }
 ])
 .controller('qrCtrl', ['$scope',
   function ($scope) {
-      $scope.whatever = 1;
+    $scope.whatever = 1;
   }
 ])
 .controller('selectDefaultCtrl', ['$scope',
   function ($scope) {
-      $scope.whatever = 1;
+    $scope.whatever = 1;
   }
 ])
 .controller('transactionsCtrl', ['$scope',
   function ($scope) {
-      $scope.whatever = 1;
+    $scope.whatever = 1;
   }
 ])
-.controller('whatsHappeningCtrl', ['$scope',
-  function ($scope) {
-      $scope.whatever = 1;
+.controller('whatsHappeningCtrl', ['$scope', '$window', 'WhatsHappening',
+  function ($scope, $window, WhatsHappening) {
+    $scope.renderHappenings = function () {
+      $window.alert('lskjdfad');
+      var getHappenings = WhatsHappening.get();
+      $window.console.log(getHappenings);
+      getHappenings.$promise.then(function (happenings) {
+	$scope.happenings = happenings;
+      });
+    };
   }
 ]);
