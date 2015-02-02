@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-var mallAppServices = angular.module('mallAppServices', ['ngResource'])
+var mallAppServices = angular.module('mallAppServices', ['ngResource', 'ngRoute'])
 .factory('WhatsHappening', ['$resource',
-  function ($resource) {
+  function($resource) {
     return $resource(API_URL + '/odata/BlogPosts?$filter=substringof(\'MALL_EVENT\',Tags) eq true&&orderby=Title');
   }
 ]);

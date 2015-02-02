@@ -4,8 +4,8 @@
 
 var mallAppControllers = angular.module('mallAppControllers', [])
 .controller('splashscreenCtrl', ['$scope', '$window', '$location', '$timeout',
-  function ($scope, $window, $location, $timeout) {
-    $scope.splashRedirect = $timeout(function () {
+  function($scope, $window, $location, $timeout) {
+    $scope.splashRedirect = $timeout(function() {
       if ($window.localStorage) {
 	var userId = $window.localStorage.getItem('userId'); // returns user's id
 	var page = $window.localStorage.getItem('homepageSetting'); // returns a page in string format
@@ -26,8 +26,8 @@ var mallAppControllers = angular.module('mallAppControllers', [])
   }
 ])
 .controller('startCtrl', ['$scope', '$location', '$window',
-  function ($scope, $location, $window) {
-    $scope.startChoice = function (page) {
+  function($scope, $location, $window) {
+    $scope.startChoice = function(page) {
       if (page == 'whats-happening') {
 	$window.localStorage.setItem('homepageSetting', 'whats-happening');
 	$location.path('/whats-happening');
@@ -42,57 +42,67 @@ var mallAppControllers = angular.module('mallAppControllers', [])
   }
 ])
 .controller('loginCtrl', ['$scope', '$location', '$mdSidenav',
-  function ($scope, $location, $mdSidenav) {
-    $scope.login = function () {
+  function($scope, $location, $mdSidenav) {
+    $scope.login = function() {
       // $resource to authenticate and also save userId and token for $resource usage
       // then afterwards redirect to /start
       $location.path('/start');	
     };
-    $scope.signUp = function () {
+    $scope.signUp = function() {
       // do something to sign up the user, using $resource or something
     };
-    $scope.toggleLeftSidenav = function () {
+    $scope.toggleLeftSidenav = function() {
       $mdSidenav('left').toggle();
     };
-    $scope.toggleRightSidenav = function () {
+    $scope.toggleRightSidenav = function() {
       $mdSidenav('right').toggle();
     };
   }
 ])
 .controller('centerInfoCtrl', ['$scope',
-  function ($scope) {
+  function($scope) {
     $scope.whatever = 1;
   }
 ])
 .controller('directoryCtrl', ['$scope',
-  function ($scope) {
+  function($scope) {
     $scope.whatever = 1;
   }
 ])
 .controller('qrCtrl', ['$scope',
-  function ($scope) {
+  function($scope) {
     $scope.whatever = 1;
   }
 ])
 .controller('selectDefaultCtrl', ['$scope',
-  function ($scope) {
+  function($scope) {
     $scope.whatever = 1;
   }
 ])
 .controller('transactionsCtrl', ['$scope',
-  function ($scope) {
+  function($scope) {
     $scope.whatever = 1;
   }
 ])
 .controller('whatsHappeningCtrl', ['$scope', '$window', 'WhatsHappening',
-  function ($scope, $window, WhatsHappening) {
-    $scope.renderHappenings = function () {
-      $window.alert('lskjdfad');
-      var getHappenings = WhatsHappening.get();
+  function($scope, $window, WhatsHappening) {
+    //whatsHappening = new WhatsHappening(); // don't even need to instantiate it. The stackoverflow people lied.
+    $scope.renderHappenings = function() {
+      /*
+      $window.console.log(WhatsHappening.get(function(data) {
+	//$scope.happenings = data;
+	return data;
+      }));
+      */
+      $scope.data = WhatsHappening.get(function(data) { return data; });
+      //var getHappenings = WhatsHappening.get();
+      /*
       $window.console.log(getHappenings);
-      getHappenings.$promise.then(function (happenings) {
+      getHappenings.$promise.then(function(happenings) {
 	$scope.happenings = happenings;
+	$window.console.log(happenings);
       });
+      */
     };
   }
 ]);
