@@ -84,25 +84,39 @@ var mallAppControllers = angular.module('mallAppControllers', [])
     $scope.whatever = 1;
   }
 ])
-.controller('whatsHappeningCtrl', ['$scope', '$window', 'WhatsHappening',
-  function($scope, $window, WhatsHappening) {
+.controller('whatsHappeningCtrl', ['$scope', '$window', 'WhatsHappening', '$sce',
+  function($scope, $window, WhatsHappening, $sce) {
     //whatsHappening = new WhatsHappening(); // don't even need to instantiate it. The stackoverflow people lied.
+    WhatsHappening.get(function(response) { 
+      $window.console.log(response.value);
+      $scope.happenings = [];
+      for (var i = 0; i < response.value.length; i++) {
+	var html = $sce.trustAsHtml(response.value[i].Body);
+	$scope.happenings.push(html);	
+      }
+    });
+    /*
+    $scope.log = function() {
+      $window.console.log($scope.getHappenings());
+    };
+    $scope.logValue = function() {
+      $window.console.log($scope.getHappenings().value); // this will get you nothing as it must wait for the callback, but how come the first one can?
+    };
+    */
+    /*
     $scope.renderHappenings = function() {
-      /*
       $window.console.log(WhatsHappening.get(function(data) {
 	//$scope.happenings = data;
 	return data;
       }));
-      */
-      $scope.data = WhatsHappening.get(function(data) { return data; });
+      //$scope.happenings = WhatsHappening.get(function(data) { $scope.data = data; });
       //var getHappenings = WhatsHappening.get();
-      /*
       $window.console.log(getHappenings);
       getHappenings.$promise.then(function(happenings) {
 	$scope.happenings = happenings;
 	$window.console.log(happenings);
       });
-      */
     };
+    */
   }
 ]);
