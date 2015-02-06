@@ -23,7 +23,7 @@
 }
  
 ::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 }
 
 .std-padding {
@@ -43,9 +43,28 @@
   margin: 15px auto 15px auto;
 }
 
+.header {
+
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
   width: 100%;
 }
 
+[ng-class*="main-menu-button"] {
+  background: url("../img/arrow395.svg") no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  display: inline;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}

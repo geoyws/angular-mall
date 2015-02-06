@@ -1,8 +1,19 @@
 ﻿<whats-happening-page>
-  <md-toolbar class="std-padding">What's Happening?</md-toolbar>
-  <button ng-click="log()">Test</button>
-  <button ng-click="logValue()">Test</button>
-  <button ng-click="getHappenings()">Test</button>
+  <md-sidenav class="md-sidenav-left" md-component-id="main-menu">
+    <md-toolbar class="std-padding">
+      <h1 class="md-toolbar-tools">Profile Name</h1>
+    </md-toolbar>
+    <md-content>
+      <md-button>Shops</md-button>
+      <md-button>What's Happening</md-button>
+      <md-button>Transactions</md-button>
+      <md-button>Center Info</md-button>
+      <md-button>QR Code Scanner</md-button>
+    </md-content>
+  </md-sidenav>
+  <md-toolbar class="header std-padding">
+    <md-button aria-label="toggle-main-menu" ng-class="main-menu-button inline" ng-click="toggleMainMenuSideNav()"></md-button><div>What's Happening?</div>
+  </md-toolbar>
   <md-content>
     <md-card ng-repeat="happening in happenings">
       <div ng-bind-html="happening"></div>

@@ -87,6 +87,9 @@ var mallAppControllers = angular.module('mallAppControllers', [])
 .controller('whatsHappeningCtrl', ['$scope', '$window', 'WhatsHappening', '$sce',
   function($scope, $window, WhatsHappening, $sce) {
     //whatsHappening = new WhatsHappening(); // don't even need to instantiate it. The stackoverflow people lied.
+    $scope.toggleMainMenuSidenav = function() {
+      $mdSidenav('main-menu').toggle();
+    };
     WhatsHappening.get(function(response) { 
       $window.console.log(response.value);
       $scope.happenings = [];
