@@ -18,6 +18,14 @@
   display: block;
 }
 
+.full-width {
+  width: 100%;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
 .h-center {
   margin: auto;
 }
@@ -53,12 +61,20 @@ input[type="email"] {
   width: 100%;
 }
 
-[ng-class*="main-menu-button"] {
-  background: url("../img/arrow395.svg") no-repeat;
+.main-menu-button {
+  background: url("../img/list26white.svg") no-repeat;
   background-size: contain;
-  width: 24px;
-  height: 24px;
-  display: inline;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.back-button {
+  background: url("../img/arrow395white.svg") no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
 
 .inline {
@@ -67,4 +83,12 @@ input[type="email"] {
 
 .inline-block {
   display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

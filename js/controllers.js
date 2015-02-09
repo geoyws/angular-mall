@@ -3,9 +3,25 @@
 /* Controllers */
 
 var mallAppControllers = angular.module('mallAppControllers', [])
-.controller('splashscreenCtrl', ['$scope', '$window', '$location', '$timeout',
-  function($scope, $window, $location, $timeout) {
-    $scope.splashRedirect = $timeout(function() {
+.controller('mainNavbar', ['$scope', '$window', '$location', '$mdSidenav', 'Standard',
+  function ($scope, $window, $location, $mdSidenav, Standard) {
+    $scope.back = Standard.back;
+    $scope.show = $window.showNavbar;
+    $scope.breadcrumb = $window.breadcrumb;
+    $scope.$watch(function () { return $window.showNavbar; }, function () {
+      // every time this global variable window.showNavbar changes, apply the changes to $scope.show to refresh to show/hide the navbar
+      $scope.show = $window.showNavbar;
+      $scope.breadcrumb = $window.breadcrumb;
+    });
+    $scope.toggleMainMenuSidenav = function () {
+      $mdSidenav('main-menu').toggle();
+    };
+  }
+])
+.controller('splashscreenCtrl', ['$scope', '$window', '$location', '$timeout', 'Standard',
+  function ($scope, $window, $location, $timeout, Standard) {
+    Standard.showNavbar(false); // to ensure that the navbar is hidden
+    $scope.splashRedirect = $timeout(function () {
       if ($window.localStorage) {
 	var userId = $window.localStorage.getItem('userId'); // returns user's id
 	var page = $window.localStorage.getItem('homepageSetting'); // returns a page in string format
@@ -25,8 +41,9 @@ var mallAppControllers = angular.module('mallAppControllers', [])
     }, 500);
   }
 ])
-.controller('startCtrl', ['$scope', '$location', '$window',
-  function($scope, $location, $window) {
+.controller('startCtrl', ['$scope', '$location', '$window', 'Standard',
+  function($scope, $location, $window, Standard) {
+    Standard.showNavbar(false);
     $scope.startChoice = function(page) {
       if (page == 'whats-happening') {
 	$window.localStorage.setItem('homepageSetting', 'whats-happening');
@@ -41,55 +58,63 @@ var mallAppControllers = angular.module('mallAppControllers', [])
     }
   }
 ])
-.controller('loginCtrl', ['$scope', '$location', '$mdSidenav',
-  function($scope, $location, $mdSidenav) {
-    $scope.login = function() {
+.controller('loginCtrl', ['$scope', '$location', '$mdSidenav', 'Standard',
+  function($scope, $location, $mdSidenav, Standard) {
+    Standard.showNavbar(false);
+    $scope.login = function () {
       // $resource to authenticate and also save userId and token for $resource usage
       // then afterwards redirect to /start
       $location.path('/start');	
     };
-    $scope.signUp = function() {
+    $scope.signUp = function () {
       // do something to sign up the user, using $resource or something
     };
-    $scope.toggleLeftSidenav = function() {
+    $scope.toggleLeftSidenav = function () {
       $mdSidenav('left').toggle();
     };
-    $scope.toggleRightSidenav = function() {
+    $scope.toggleRightSidenav = function () {
       $mdSidenav('right').toggle();
     };
   }
 ])
-.controller('centerInfoCtrl', ['$scope',
-  function($scope) {
+.controller('centerInfoCtrl', ['$scope', 'Standard',
+  function ($scope, Standard) {
+    Standard.showNavbar(true);
+    Standard.breadcrumbs('Center Info');
     $scope.whatever = 1;
   }
 ])
-.controller('directoryCtrl', ['$scope',
-  function($scope) {
+.controller('directoryCtrl', ['$scope', 'Standard',
+  function ($scope, Standard) {
+    Standard.showNavbar(true);
+    Standard.breadcrumbs('Directory');
     $scope.whatever = 1;
   }
 ])
-.controller('qrCtrl', ['$scope',
-  function($scope) {
+.controller('qrCtrl', ['$scope', 'Standard',
+  function ($scope, Standard) {
+    Standard.showNavbar(true);
+    Standard.breadcrumbs('QR Code');
     $scope.whatever = 1;
   }
 ])
-.controller('selectDefaultCtrl', ['$scope',
-  function($scope) {
+.controller('selectDefaultCtrl', ['$scope', 'Standard',
+  function ($scope, Standard) {
+    Standard.showNavbar(false);
     $scope.whatever = 1;
   }
 ])
-.controller('transactionsCtrl', ['$scope',
-  function($scope) {
+.controller('transactionsCtrl', ['$scope', 'Standard',
+  function ($scope, Standard) {
+    Standard.showNavbar(true);
+    Standard.breadcrumbs('Transactions');
     $scope.whatever = 1;
   }
 ])
-.controller('whatsHappeningCtrl', ['$scope', '$window', 'WhatsHappening', '$sce',
-  function($scope, $window, WhatsHappening, $sce) {
-    //whatsHappening = new WhatsHappening(); // don't even need to instantiate it. The stackoverflow people lied.
-    $scope.toggleMainMenuSidenav = function() {
-      $mdSidenav('main-menu').toggle();
-    };
+.controller('whatsHappeningCtrl', ['$scope', '$window', '$sce', 'WhatsHappening', 'Standard',
+  function ($scope, $window, $sce, WhatsHappening, Standard) {
+    Standard.showNavbar(true);
+    Standard.breadcrumbs('What\'s Happening?');
     WhatsHappening.get(function(response) { 
       $window.console.log(response.value);
       $scope.happenings = [];
@@ -98,28 +123,5 @@ var mallAppControllers = angular.module('mallAppControllers', [])
 	$scope.happenings.push(html);	
       }
     });
-    /*
-    $scope.log = function() {
-      $window.console.log($scope.getHappenings());
-    };
-    $scope.logValue = function() {
-      $window.console.log($scope.getHappenings().value); // this will get you nothing as it must wait for the callback, but how come the first one can?
-    };
-    */
-    /*
-    $scope.renderHappenings = function() {
-      $window.console.log(WhatsHappening.get(function(data) {
-	//$scope.happenings = data;
-	return data;
-      }));
-      //$scope.happenings = WhatsHappening.get(function(data) { $scope.data = data; });
-      //var getHappenings = WhatsHappening.get();
-      $window.console.log(getHappenings);
-      getHappenings.$promise.then(function(happenings) {
-	$scope.happenings = happenings;
-	$window.console.log(happenings);
-      });
-    };
-    */
   }
 ]);

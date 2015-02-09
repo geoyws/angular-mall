@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-/* App Module */
+/* App Config */
 
 var API_URL = 'http://ifcaservice.com/mall/api';
 
@@ -8,7 +8,7 @@ var mallApp = angular.module('mallApp', [
   'ngRoute',
   'ngMaterial',
   'ngResource',
-  //'mallAppAnimations',
+  'mallAppAnimations',
   'mallAppControllers',
   //'mallAppFilters',
   'mallAppServices'

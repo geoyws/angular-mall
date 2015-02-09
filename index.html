@@ -4,17 +4,6 @@
     <title>Angular Mall Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet">
-    <link href="bower_components/angular-material/themes/indigo-theme.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/tiny.css" rel="stylesheet">
-    <link href="css/small.css" rel="stylesheet">
-    <link href="css/medium.css" rel="stylesheet">
-    <link href="css/large.css" rel="stylesheet">
-</head>
-<body>
-    <main-view ng-view>
-    </main-view>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -28,5 +17,36 @@
     <script src="js/filters.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
+    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet">
+    <link href="bower_components/angular-material/themes/indigo-theme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/tiny.css" rel="stylesheet">
+    <link href="css/small.css" rel="stylesheet">
+    <link href="css/medium.css" rel="stylesheet">
+    <link href="css/large.css" rel="stylesheet">
+</head>
+<body>
+    <main-navbar id="navbar" ng-controller="mainNavbar" ng-cloak ng-show="show">
+      <md-sidenav class="md-sidenav-left" md-component-id="main-menu">
+	<md-toolbar class="std-padding">
+	  <h1 class="md-toolbar-tools">Profile Name</h1>
+	</md-toolbar>
+	<md-content>
+	  <md-button class="block full-width text-align-left">Shops</md-button>
+	  <md-button class="block full-width text-align-left">What's Happening</md-button>
+	  <md-button class="block full-width text-align-left">Transactions</md-button>
+	  <md-button class="block full-width text-align-left">Center Info</md-button>
+	  <md-button class="block full-width text-align-left">QR Code Scanner</md-button>
+	</md-content>
+      </md-sidenav>
+      <md-toolbar>
+	<breadcrumbs-nav class="std-padding">
+	  <md-button aria-label="toggle-main-menu" class="main-menu-button" ng-click="toggleMainMenuSidenav()"></md-button>
+	  <md-button aria-label="back-button" class="back-button" ng-click="back()"></md-button>
+	  <span id="breadcrumbs"></span>
+	</breadcrumbs-nav>
+      </md-toolbar>
+    </main-navbar>
+    <main-view ng-view></main-view>
 </body>
 </html>
