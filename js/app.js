@@ -12,11 +12,12 @@ var mallApp = angular.module('mallApp', [
   'mallAppControllers',
   //'mallAppFilters',
   'mallAppServices'
-]);
-
-mallApp.config([
+])
+.config([
   '$routeProvider',
-  function($routeProvider) {
+  '$mdThemingProvider',
+  function($routeProvider, $mdThemingProvider) {
+    $mdThemingProvider.theme('default').primaryPalette('pink').accentPalette('orange');
     $routeProvider
     .when('/', {
       templateUrl: 'partials/splashscreen.html',
@@ -55,3 +56,5 @@ mallApp.config([
     });
   }
 ]);
+
+
