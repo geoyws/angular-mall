@@ -17,7 +17,7 @@ var mallApp = angular.module('mallApp', [
   '$routeProvider',
   '$mdThemingProvider',
   function($routeProvider, $mdThemingProvider) {
-    $mdThemingProvider.theme('default').primaryPalette('pink').accentPalette('orange');
+    $mdThemingProvider.theme('default').primaryPalette('red').accentPalette('orange');
     $routeProvider
     .when('/', {
       templateUrl: 'partials/splashscreen.html',

@@ -45,18 +45,20 @@
       </md-input-container>
     </form>
   </md-sidenav>
-  <section-holder class="absolute-center block">
-    <img class="block logo" src="img/paradigm-mall-logo.png">
-    <md-input-container>
-      <label>Username</label>
-      <input type="text" class="" ng-model="login.username" name="username" required>
-    </md-input-container>
-    <md-input-container>
-      <label>Password</label>
-      <input type="text" class="" ng-model="login.password" name="password" required>
-    </md-input-container>
-    <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
-    <md-button ng-click="toggleRightSidenav()" class="md-raised md-primary">Forgot Password</md-button>
-    <md-button ng-click="toggleLeftSidenav()" class="md-raised md-primary">Sign Up</md-button>
+  <section-holder layout="column" layout-align="center center" class="">
+    <center-holder class="">
+      <img class="logo" src="img/paradigm-mall-logo.png">
+      <md-input-container>
+	<label>Username</label>
+	<input type="text" class="" ng-model="login.username" name="username" required>
+      </md-input-container>
+      <md-input-container>
+	<label>Password</label>
+	<input type="text" class="" ng-model="login.password" name="password" required>
+      </md-input-container>
+      <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
+      <md-button ng-click="toggleRightSidenav()" class="md-raised md-primary">Forgot Password</md-button>
+      <md-button ng-click="toggleLeftSidenav()" class="md-raised md-primary">Sign Up</md-button>
+    </center-holder>
   </section-holder>
 </login-page>

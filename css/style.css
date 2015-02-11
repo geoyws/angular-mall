@@ -61,12 +61,19 @@ input[type="email"] {
   width: 100%;
 }
 
+.main-menu-item {
+  line-height: 40px;
+  max-height: 40px;
+  padding: 0px 16px;
+  text-transform: none;
+}
+
 .main-menu-button {
-  background: url("../img/list26white.svg") no-repeat;
-  background-size: contain;
+  background: url("../img/list26white.svg") center center no-repeat;
+  background-size: 25px;
   width: 25px;
   height: 25px;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 
 .back-button {
@@ -74,7 +81,7 @@ input[type="email"] {
   background-size: contain;
   width: 25px;
   height: 25px;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 
 .inline {
@@ -95,18 +102,22 @@ input[type="email"] {
 
 login-page:before {
   content: ""; 
-  background: url("../img/Paradigm H&M.jpeg");
+  background: url("../img/malaysian-invasion.jpg") 40% 40%;
   background-size: cover;
+  filter: grayscale(0.5) blur(0.5px);
+  -webkit-filter: grayscale(0.5) blur(0.5px);
   width: 100%;
   height: 100%;
   display: block;
+  position: fixed;
 }
 
 .transparent {
   background: transparent;
 }
 
-section-holder:before {
+/*
+login-page section-holder:before {
   content: "";
   display: block;
   background: white;
@@ -117,10 +128,18 @@ section-holder:before {
   top: 0;
   left: 0;
 }
+*/
 
-section-holder {
+login-page section-holder {
+  width: 100%;
+  height: 100%;
+}
+
+login-page center-holder {
   padding: 20px;
   background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  width: 100%;
 }
 
 start-page .md-button,
@@ -129,6 +148,18 @@ login-page .md-button {
   min-width: 100%;
   max-width: 100%;
   margin: 10px 0px;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.vertical-center {
+  vertical-align: center;
 }
 
 

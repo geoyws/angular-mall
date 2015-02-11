@@ -5,6 +5,9 @@
 var mallAppControllers = angular.module('mallAppControllers', [])
 .controller('mainNavbar', ['$scope', '$window', '$location', '$mdSidenav', 'Standard',
   function ($scope, $window, $location, $mdSidenav, Standard) {
+    $scope.navigate = function (path) {
+      $location.path(path);
+    };
     $scope.back = Standard.back;
     $scope.show = $window.showNavbar;
     $scope.breadcrumb = $window.breadcrumb;
