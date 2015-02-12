@@ -1,5 +1,5 @@
 ﻿<login-page>
-  <md-sidenav class="md-sidenav-left" md-component-id="left">
+  <md-sidenav class="md-sidenav-left" md-component-id="left" ng-swipe-left="toggleLeftSidenav()">
     <md-toolbar class="std-padding">
       <h1 class="md-toolbar-tools">Sign Up</h1>
     </md-toolbar>
@@ -30,19 +30,19 @@
       </md-content>
     </form>
   </md-sidenav>
-  <md-sidenav class="md-sidenav-right" md-component-id="right">
+  <md-sidenav class="md-sidenav-right" md-component-id="right" ng-swipe-right="toggleRightSidenav()">
     <md-toolbar class="std-padding">
       <h1 class="md-toolbar-tools">Forgot Password</h1>
     </md-toolbar>
     <form class="std-padding" submit="forgotPasswordSubmission()">
+      <forgot-password-description class="block">
+	You will be sent an email with instructions for you to recover your password.
+      </forgot-password-description>
       <md-input-container>
 	<label>Email</label>
 	<input type="email" class="" label="email" ng-model="forgot.email" name="email" required>
-	<forgot-password-description class="block">
-	  You will be sent an email with instructions for you to recover your password.
-	</forgot-password-description>
-	<md-button class="md-raised md-primary" href="#/login">Login</md-button>
       </md-input-container>
+      <md-button class="md-raised md-primary" href="">Send Email</md-button>
     </form>
   </md-sidenav>
   <section-holder layout="column" layout-align="center center" class="">

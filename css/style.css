@@ -96,6 +96,10 @@ input[type="email"] {
   display: none;
 }
 
+.transparent {
+  background: transparent;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
@@ -112,8 +116,16 @@ login-page:before {
   position: fixed;
 }
 
-.transparent {
-  background: transparent;
+start-page:before {
+  content: ""; 
+  background: url("../img/tongpakfu-paradigm-mall.jpg") 40% 40%;
+  background-size: cover;
+  filter: brightness(0.9) blur(20px);
+  -webkit-filter: brightness(0.9) blur(20px);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
 }
 
 /*
@@ -130,12 +142,14 @@ login-page section-holder:before {
 }
 */
 
-login-page section-holder {
+login-page section-holder,
+start-page section-holder {
   width: 100%;
   height: 100%;
 }
 
-login-page center-holder {
+login-page center-holder,
+start-page center-holder {
   padding: 20px;
   background: rgba(255, 255, 255, 0.9);
   z-index: 1;

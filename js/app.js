@@ -5,6 +5,7 @@
 var API_URL = 'http://ifcaservice.com/mall/api';
 
 var mallApp = angular.module('mallApp', [
+  'ngTouch',
   'ngRoute',
   'ngMaterial',
   'ngResource',
