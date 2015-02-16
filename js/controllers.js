@@ -69,14 +69,13 @@ var mallAppControllers = angular.module('mallAppControllers', [])
       // then afterwards redirect to /start
       $location.path('/start');	
     };
-    $scope.signUp = function () {
-      // do something to sign up the user, using $resource or something
+    $scope.signUp = function () {};
+    $scope.signUp.sidenav = function (bool) {
+      bool ? $mdSidenav('signUp').open() : $mdSidenav('signUp').close();
     };
-    $scope.toggleLeftSidenav = function () {
-      $mdSidenav('left').toggle();
-    };
-    $scope.toggleRightSidenav = function () {
-      $mdSidenav('right').toggle();
+    $scope.forgot = function () {};
+    $scope.forgot.sidenav = function (bool) {
+      bool ? $mdSidenav('forgot').open() : $mdSidenav('forgot').close();
     };
   }
 ])

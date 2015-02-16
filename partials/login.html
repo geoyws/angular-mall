@@ -1,5 +1,5 @@
 ﻿<login-page>
-  <md-sidenav class="md-sidenav-left" md-component-id="left" ng-swipe-left="toggleLeftSidenav()">
+  <md-sidenav class="md-sidenav-left" md-component-id="signUp" ng-swipe-left="signUp.sidenav(false)">
     <md-toolbar class="std-padding">
       <h1 class="md-toolbar-tools">Sign Up</h1>
     </md-toolbar>
@@ -30,7 +30,7 @@
       </md-content>
     </form>
   </md-sidenav>
-  <md-sidenav class="md-sidenav-right" md-component-id="right" ng-swipe-right="toggleRightSidenav()">
+  <md-sidenav class="md-sidenav-right" md-component-id="forgot" ng-swipe-right="forgot.sidenav(false)">
     <md-toolbar class="std-padding">
       <h1 class="md-toolbar-tools">Forgot Password</h1>
     </md-toolbar>
@@ -57,8 +57,8 @@
 	<input type="text" class="" ng-model="login.password" name="password" required>
       </md-input-container>
       <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
-      <md-button ng-click="toggleRightSidenav()" class="md-raised md-primary">Forgot Password</md-button>
-      <md-button ng-click="toggleLeftSidenav()" class="md-raised md-primary">Sign Up</md-button>
+      <md-button ng-click="forgot.sidenav(true)" class="md-raised md-primary">Forgot Password</md-button>
+      <md-button ng-click="signUp.sidenav(true)" class="md-raised md-primary">Sign Up</md-button>
     </center-holder>
   </section-holder>
 </login-page>

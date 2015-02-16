@@ -68,21 +68,23 @@ input[type="email"] {
   text-transform: none;
 }
 
+/*
 .main-menu-button {
-  background: url("../img/list26white.svg") center center no-repeat;
-  background-size: 25px;
-  width: 25px;
-  height: 25px;
+  background: url("../img/.svg") center center no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
   margin-right: 6px;
 }
 
 .back-button {
-  background: url("../img/arrow395white.svg") no-repeat;
+  background: url("../img/ic_keyboard_arrow_left_24px.svg") no-repeat;
   background-size: contain;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   margin-right: 6px;
 }
+*/
 
 .inline {
   display: inline;
@@ -106,7 +108,7 @@ input[type="email"] {
 
 login-page:before {
   content: ""; 
-  background: url("../img/malaysian-invasion.jpg") 40% 40%;
+  background: url("../img/backgrounds/malaysian-invasion.jpg") 40% 40%;
   background-size: cover;
   filter: grayscale(0.5) blur(0.5px);
   -webkit-filter: grayscale(0.5) blur(0.5px);
@@ -118,7 +120,7 @@ login-page:before {
 
 start-page:before {
   content: ""; 
-  background: url("../img/tongpakfu-paradigm-mall.jpg") 40% 40%;
+  background: url("../img/backgrounds/tongpakfu-paradigm-mall.jpg") 40% 40%;
   background-size: cover;
   filter: brightness(0.9) blur(20px);
   -webkit-filter: brightness(0.9) blur(20px);
