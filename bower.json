@@ -1,0 +1,40 @@
+{
+  "name": "angular-mall",
+  "version": "0.0.0",
+  "description": "angular try at Mall",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "ifca"
+  ],
+  "authors": [
+    "geoyws"
+  ],
+  "license": "MIT",
+  "homepage": "ifca.com.my",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "*",
+    "angular": "*",
+    "angular-route": "~1.3.13",
+    "angular-aria": "~1.3.13",
+    "angular-animate": "~1.3.13",
+    "angular-resource": "~1.3.13",
+    "angular-touch": "~1.3.13",
+    "svg-morpheus": "~0.1.8",
+    "jquery": "~2.1.3"
+  },
+  "resolutions": {
+    "angular-material": "master"
+  }
+}

@@ -1,0 +1,20 @@
+﻿<directory-page class="navbar-offset">
+  <md-content block>
+    <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="display" placeholder="Search...">
+      <span md-highlight-text="searchText">{{item.display}}</span>
+    </md-autocomplete>
+  </md-content>
+  <ng-switch on="data.selectedIndex" class="tabsbar-offset">
+    <div role="tabpanel" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()">
+      <iframe class="" frameborder="0" style="border:0; width:100%; height:100%;" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBqmT8oouS5ECWkzLKwvGtqmydmkSqacSQ&origin=Petaling+Jaya&destination=Megamall&avoid=tolls|highways"></iframe>
+    </div>
+    <div role="tabpanel" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()">CONTENT 2</div>
+    <div role="tabpanel" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()">CONTENT 3</div>
+  </ng-switch>
+  <tabs-holder class="" block>
+    <md-tabs class="md-primary" md-selected="selectedIndex" md-stretch-tabs>
+      <md-tab><ng-md-icon class="tab-svg-icon" icon="list"></ng-md-icon></md-tab>
+      <md-tab><ng-md-icon class="tab-svg-icon" icon="my_location"></ng-md-icon></md-tab>
+    </md-tabs>
+  </tabs-holder>
+</directory-page>

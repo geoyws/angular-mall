@@ -1,0 +1,221 @@
+﻿[abs-center] {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+}
+
+[fixed] {
+  position: fixed;
+}
+
+[flex-center] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[block] {
+  display: block;
+}
+
+[full] {
+  width: 100%;
+  height: 100%;
+}
+
+[full-width] {
+  width: 100%;
+}
+
+[text-align-left] {
+  text-align: left;
+}
+
+[hcenter] {
+  margin: auto;
+}
+ 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+.logo
+{
+  margin: 15px auto 15px auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+}
+
+.main-menu-item {
+  line-height: 40px;
+  max-height: 40px;
+  padding: 0px 16px;
+  text-transform: none;
+  text-align: left;
+}
+
+/*
+.main-menu-button {
+  width: 24px;
+  height: 24px;
+  margin: 0 6px 0 0;
+}
+
+.back-button {
+  width: 24px;
+  height: 24px;
+  margin: 0 6px 0 0;
+}
+*/
+
+.nav-svg-icon,
+.tab-svg-icon {
+  fill: white;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.tab-svg-icon {
+
+}
+
+[inline] {
+  display: inline;
+}
+
+[inline-block] {
+  display: inline-block;
+}
+
+[hidden] {
+  display: none;
+}
+
+[transparent] {
+  background: transparent;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+[table] {
+  display: table;
+}
+
+[table-cell] {
+  display: table-cell;
+}
+
+[vcenter] {
+  vertical-align: center;
+}
+
+main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+tabs-holder {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+md-sidenav {
+  position: fixed;
+}
+
+main-view {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  margin: 15px 15px 15px 0;
+}
+
+login-page:before {
+  content: ""; 
+  background: url("../img/backgrounds/malaysian-invasion.jpg") 40% 40%;
+  background-size: cover;
+  filter: grayscale(0.5) blur(0.5px);
+  -webkit-filter: grayscale(0.5) blur(0.5px);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+}
+
+start-page:before {
+  content: ""; 
+  background: url("../img/backgrounds/tongpakfu-paradigm-mall.jpg") 40% 40%;
+  background-size: cover;
+  filter: brightness(0.9) blur(20px);
+  -webkit-filter: brightness(0.9) blur(20px);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+}
+
+/*
+login-page section-holder:before {
+  content: "";
+  display: block;
+  background: white;
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+*/
+
+login-page section-holder,
+start-page section-holder {
+  width: 100%;
+  height: 100%;
+}
+
+login-page center-holder,
+start-page center-holder {
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  width: 100%;
+}
+
+start-page .md-button,
+login-page .md-button {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 10px 0px;
+}
+
+.standard-padding {
+  padding: 16px;
+}
+
+.navbar-offset {
+  position: fixed;
+  top: 64px;
+}

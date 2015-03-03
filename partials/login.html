@@ -1,0 +1,64 @@
+﻿<login-page block full>
+  <md-sidenav class="md-sidenav-left" md-component-id="signUp" ng-swipe-left="signUp.sidenav(false)">
+    <md-toolbar class="">
+      <h1 class="md-toolbar-tools">Sign Up</h1>
+    </md-toolbar>
+    <form class="standard-padding" ng-submit="signUp()">
+      <md-content>
+	<md-input-container>
+	  <label>Username</label>
+	  <input type="text" class="" label="username" ng-model="signUp.username" name="username" required>
+	</md-input-container>
+	<md-input-container>
+	  <label>Password</label>
+	  <input type="password" class="" label="password" ng-model="signUp.password" name="password" required>
+	</md-input-container>
+	<md-input-container>
+	  <label>Repeat Password</label>
+	  <input type="password" class="" label="repeat password" ng-model="signUp.repeatPassword" name="repeatPassword" required>
+	</md-input-container>
+	<md-input-container>
+	  <label>Email</label>
+	  <input type="email" class="" label="email" ng-model="signUp.email" name="email" required>
+	</md-input-container>
+      </md-content>
+      <md-content>
+	<md-button class="md-raised md-primary">Create Account</md-button>
+	<md-button ng-click="sso.facebook()" class="md-raised md-primary">Sign Up with Facebook</md-button>
+	<md-button ng-click="sso.twitter()" class="md-raised md-primary">Sign Up with Twitter</md-button>
+	<md-button ng-click="sso.google()" class="md-raised md-primary">Sign Up with Google</md-button>
+      </md-content>
+    </form>
+  </md-sidenav>
+  <md-sidenav class="md-sidenav-right" md-component-id="forgot" ng-swipe-right="forgot.sidenav(false)">
+    <md-toolbar class="">
+      <h1 class="md-toolbar-tools">Forgot Password</h1>
+    </md-toolbar>
+    <form class="standard-padding" submit="forgotPasswordSubmission()">
+      <forgot-password-description class="block">
+	You will be sent an email with instructions for you to recover your password.
+      </forgot-password-description>
+      <md-input-container>
+	<label>Email</label>
+	<input type="email" class="" label="email" ng-model="forgot.email" name="email" required>
+      </md-input-container>
+      <md-button class="md-raised md-primary" href="">Send Email</md-button>
+    </form>
+  </md-sidenav>
+  <section-holder layout="column" layout-align="center center" class="">
+    <center-holder class="standard-padding">
+      <img class="logo" src="img/paradigm-mall-logo.png">
+      <md-input-container>
+	<label>Username</label>
+	<input type="text" class="" ng-model="login.username" name="username" required>
+      </md-input-container>
+      <md-input-container>
+	<label>Password</label>
+	<input type="text" class="" ng-model="login.password" name="password" required>
+      </md-input-container>
+      <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
+      <md-button ng-click="forgot.sidenav(true)" class="md-raised md-primary">Forgot Password</md-button>
+      <md-button ng-click="signUp.sidenav(true)" class="md-raised md-primary">Sign Up</md-button>
+    </center-holder>
+  </section-holder>
+</login-page>

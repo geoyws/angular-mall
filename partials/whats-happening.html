@@ -1,0 +1,19 @@
+﻿<whats-happening-page class="navbar-offset">
+  <ng-switch on="data.selectedIndex" class="tab3-content">
+    <div role="tabpanel" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()">CONTENT 1</div>
+    <div role="tabpanel" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()">CONTENT 2</div>
+    <div role="tabpanel" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()">CONTENT 3</div>
+  </ng-switch>
+  <md-content>
+    <md-card ng-repeat="happening in happenings">
+      <div ng-bind-html="happening"></div>
+    </md-card>
+  </md-content>
+  <tabs-holder class="" block>
+    <md-tabs class="md-primary" md-selected="selectedIndex" md-stretch-tabs>
+      <md-tab><ng-md-icon class="tab-svg-icon" icon="list"></ng-md-icon></md-tab>
+      <md-tab><ng-md-icon class="tab-svg-icon" icon="my_location"></ng-md-icon></md-tab>
+      <md-tab><ng-md-icon class="tab-svg-icon" icon="event_available"></ng-md-icon></md-tab>
+    </md-tabs>
+  </tabs-holder>
+</whats-happening-page>

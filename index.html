@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html ng-app="mallApp">
+<head>
+  <title>Angular Mall Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <link href="bower_components/angular-material/angular-material.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/tiny.css" rel="stylesheet">
+  <link href="css/small.css" rel="stylesheet">
+  <link href="css/medium.css" rel="stylesheet">
+  <link href="css/large.css" rel="stylesheet">
+</head>
+<body>
+  <main-navbar id="navbar" ng-controller="mainNavbar" ng-cloak ng-show="show">
+    <md-sidenav class="md-sidenav-left" md-component-id="main-menu">
+      <md-toolbar md-scroll-shrink class="">
+	<profile-holder class="md-toolbar-tools">
+	  <img class="profile-pic" src="img/george.jpg">
+	  <h1>George Yong</h1>
+	</profile-holder>
+      </md-toolbar>
+      <md-content class="" layout="column">
+	<md-button class="main-menu-item" ng-click="navigate('/directory'); toggleMainMenuSidenav();">Directory</md-button>
+	<md-button class="main-menu-item" ng-click="navigate('/whats-happening'); toggleMainMenuSidenav();">What's Happening?</md-button>
+	<md-button class="main-menu-item" ng-click="navigate('/transactions'); toggleMainMenuSidenav();">Transactions</md-button>
+	<md-button class="main-menu-item" ng-click="navigate('/center-info'); toggleMainMenuSidenav();">Center Info</md-button>
+	<md-button class="main-menu-item" ng-click="navigate('/qr'); toggleMainMenuSidenav();">QR Code Scanner</md-button>
+      </md-content>
+    </md-sidenav>
+    <md-toolbar>
+      <breadcrumbs-nav class="md-toolbar-tools" layout="row" layout-align"start end">
+	<ng-md-icon ng-click="toggleMainMenuSidenav()" class="nav-svg-icon" icon="menu"></ng-md-icon>
+	<ng-md-icon ng-click="back()" class="nav-svg-icon" icon="chevron_left"></ng-md-icon>
+	<div class="" id="breadcrumbs"></div>
+      </breadcrumbs-nav>
+    </md-toolbar>
+  </main-navbar>
+  <main-view ng-cloak ng-view block full></main-view>
+</body>
+</html>
